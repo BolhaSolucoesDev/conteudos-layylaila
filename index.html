@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Obrigado pela confirmação</title>
+  <title>Acesso confirmado</title>
 
-  <!-- Facebook Pixel Code (corrigido e mais seguro) -->
+  <!-- Facebook Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
@@ -17,22 +17,29 @@
     'https://connect.facebook.net/en_US/fbevents.js');
 
     fbq('init', '1554046405266903');
-    fbq('track', 'Purchase', {
-      value: 10.00,
-      currency: 'BRL'
+    fbq('track', 'PageView');
+
+    // Evento de compra em PRODUÇÃO
+    window.addEventListener('load', function () {
+      fbq('track', 'Purchase', {
+        value: 10.00,
+        currency: 'BRL'
+      });
     });
   </script>
+
   <noscript>
     <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1554046405266903&ev=Purchase&cd[value]=10.00&cd[currency]=BRL&noscript=1"/>
+      src="https://www.facebook.com/tr?id=1554046405266903&ev=Purchase
+      &cd[value]=10.00&cd[currency]=BRL&noscript=1"/>
   </noscript>
   <!-- End Facebook Pixel Code -->
 
-  <!-- Redirecionamento com atraso maior (mais seguro para anúncios) -->
+  <!-- Redirecionamento seguro -->
   <script>
     setTimeout(function () {
       window.location.href = "https://t.me/+fPxwyY_yPbJmYTcx";
-    }, 3000);
+    }, 5000);
   </script>
 
   <style>
@@ -44,8 +51,8 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      text-align: center;
       background-color: #f5f5f5;
+      text-align: center;
     }
 
     .box {
@@ -68,11 +75,12 @@
     }
   </style>
 </head>
+
 <body>
   <div class="box">
     <h1>✅ Acesso confirmado!</h1>
     <p>Estamos liberando seu conteúdo exclusivo.</p>
-    <p>Você será redirecionado automaticamente em instantes.</p>
+    <p>Você será redirecionado automaticamente.</p>
   </div>
 </body>
 </html>
